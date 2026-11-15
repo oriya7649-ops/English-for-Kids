@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>דרור קטן – אנגלית בגיל הרך (גילאי 5–6)</title>
+<meta name="description" content="תוכנית ללימוד אנגלית לילדים בגילאי 5–6: שירים, סיפורים ומשחקים שמלמדים את המילים הראשונות באנגלית.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=Heebo:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2a5a; --sun:#ffc933; --grass:#34b27b; --coral:#ff6f91; --sky:#d9f0ff; --paper:#fffdf8; --blue:#3b82f6;
+  --head:"Rubik","Arial Hebrew","Segoe UI",Arial,sans-serif;
+  --body:"Heebo","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);font-size:1.15rem;line-height:1.65;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:var(--head);line-height:1.2;font-weight:700}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--blue);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+.en{direction:ltr;unicode-bidi:isolate}
+
+/* header */
+header{background:var(--sky)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;flex-wrap:wrap}
+.logo{font-family:var(--head);font-weight:700;font-size:1.4rem;text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:800}
+nav a:hover{text-decoration:underline;text-decoration-thickness:3px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding:3rem 0 5rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:1.25rem}
+.hero p{max-width:30ch;margin-bottom:1.75rem;font-size:1.25rem}
+.btn{display:inline-block;font-family:var(--head);font-weight:600;font-size:1.2rem;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:.85rem 2rem;text-decoration:none;cursor:pointer;box-shadow:0 5px 0 #0d1433;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #0d1433}
+.btn:active{transform:translateY(5px);box-shadow:0 0 0 #0d1433}
+.btn.alt{background:var(--sun);color:var(--ink);box-shadow:0 5px 0 #c99a00}
+.btn.alt:hover{box-shadow:0 3px 0 #c99a00}
+
+/* letter blocks: English letters stay left-to-right */
+.blocks{display:grid;direction:ltr;grid-template-columns:repeat(3,1fr);gap:.9rem;max-width:360px;margin-inline-start:auto}
+.block{aspect-ratio:1;border:0;border-radius:22px;font-family:Arial,sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,4rem);color:#fff;cursor:pointer;box-shadow:0 8px 0 rgba(31,42,90,.35);transition:transform .15s}
+.block:nth-child(1){background:var(--coral);transform:rotate(-5deg)}
+.block:nth-child(2){background:var(--grass);transform:rotate(3deg)}
+.block:nth-child(3){background:var(--blue);transform:rotate(-2deg)}
+.block:nth-child(4){background:var(--sun);color:var(--ink);transform:rotate(4deg)}
+.block:nth-child(5){background:var(--ink);transform:rotate(-4deg)}
+.block:nth-child(6){background:var(--coral);transform:rotate(2deg)}
+.block:hover{transform:rotate(0) translateY(-6px)}
+.block.pop{animation:pop .4s}
+@keyframes pop{40%{transform:scale(1.18) rotate(6deg)}}
+.hint{text-align:center;font-weight:800;margin-top:1.4rem;max-width:360px;margin-inline-start:auto}
+
+.wave{display:block;width:100%;height:50px;background:var(--sky)}
+.wave path{fill:var(--paper)}
+
+h2{font-size:clamp(1.9rem,4.5vw,2.7rem);margin-bottom:.75rem}
+.lead{max-width:50ch;margin-bottom:2.25rem}
+
+/* word cards */
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+.word{background:#fff;border:3px solid var(--ink);border-radius:26px;padding:1.2rem .5rem;cursor:pointer;font-family:Arial,sans-serif;font-size:1.5rem;font-weight:700;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:.2rem;transition:transform .12s,background .12s}
+.word span{font-size:3.4rem;line-height:1.1}
+.word small{font-family:var(--body);font-size:1rem;font-weight:500;color:#4a5488}
+.word:hover{background:var(--sun)}
+.word.pop{animation:pop .4s}
+
+/* topics */
+.topics{background:var(--sky)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.topic{background:#fff;border-radius:30px 30px 6px 30px;padding:1.6rem}
+.topic:nth-child(even){border-radius:30px 30px 30px 6px}
+.topic .ico{font-size:2.6rem;display:block;margin-bottom:.5rem}
+.topic h3{font-size:1.45rem;margin-bottom:.4rem}
+
+/* class sequence */
+.steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.2rem;counter-reset:s}
+.steps li{counter-increment:s;padding-top:1rem;border-top:6px dotted var(--coral)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--head);font-weight:700;margin-top:-2.1rem;margin-bottom:.6rem}
+.steps strong{display:block;font-family:var(--head);font-size:1.25rem}
+.steps small{font-size:1rem;color:#4a5488}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:2.5rem}
+.fact{border:3px solid var(--ink);border-radius:22px;padding:1.2rem}
+.fact b{display:block;font-family:var(--head);font-size:2rem;color:var(--grass)}
+
+/* signup */
+.signup{background:var(--sun)}
+.signup .box{background:#fff;border-radius:34px;padding:2.2rem;max-width:620px}
+label{display:block;font-weight:800;margin:1rem 0 .3rem}
+input,select{width:100%;font:inherit;padding:.8rem 1rem;border:3px solid var(--ink);border-radius:16px;background:#fff;color:var(--ink)}
+input[type=email]{direction:ltr;text-align:right}
+.signup .btn{margin-top:1.5rem}
+#thanks{display:none;font-family:var(--head);font-size:1.5rem}
+
+footer{background:var(--ink);color:#fff;padding:2rem 0;text-align:center}
+
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr;padding-bottom:3rem}
+  .blocks,.hint{margin-inline:auto}
+  section{padding:3.2rem 0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.topic{display:flex;flex-direction:column;align-items:flex-start}
+.topic p{flex:1}
+.go{margin-top:1rem;font-family:var(--head);font-weight:600;font-size:1.05rem;background:var(--grass);color:#fff;border:0;border-radius:999px;padding:.55rem 1.4rem;cursor:pointer;box-shadow:0 4px 0 #207a53}
+.go:hover{transform:translateY(2px);box-shadow:0 2px 0 #207a53}
+dialog{border:0;border-radius:34px;padding:2rem;width:min(720px,94vw);max-height:90vh;color:var(--ink);background:var(--paper);box-shadow:0 20px 60px rgba(31,42,90,.4)}
+dialog::backdrop{background:rgba(31,42,90,.55)}
+dialog h2{margin-bottom:.3rem}
+dialog .close{position:absolute;top:1rem;inset-inline-start:1rem;width:2.8rem;height:2.8rem;border-radius:50%;border:3px solid var(--ink);background:#fff;font-size:1.4rem;cursor:pointer;color:var(--ink)}
+dialog .words{margin-top:1.5rem}
+.word .big{font-family:Arial,sans-serif;font-size:2.4rem;font-weight:700}
+/* ===== Design pass: paper cut-out / toy-block look ===== */
+:root{--coral-t:#ffd6e0;--sun-t:#fff0b8;--grass-t:#c9efdc;--blue-t:#cfe0ff;--hard:5px 5px 0 var(--ink)}
+body{background:var(--paper) radial-gradient(rgba(31,42,90,.09) 1.5px,transparent 1.5px) 0 0/22px 22px}
+h1,h2{letter-spacing:-.01em}
+.hero h1{font-size:clamp(3rem,8vw,5.4rem);line-height:1.05;font-weight:700}
+.hero p{font-size:1.3rem}
+header{background:var(--sky) radial-gradient(rgba(255,255,255,.7) 2px,transparent 2px) 0 0/26px 26px}
+.logo{display:inline-block;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:.2rem 1.1rem;box-shadow:3px 3px 0 var(--ink)}
+.btn,.go{border:3px solid var(--ink);box-shadow:var(--hard)}
+.btn{background:var(--coral);color:#fff}
+.btn.alt{background:var(--sun);color:var(--ink);box-shadow:var(--hard)}
+.btn:hover,.go:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
+.go{background:#fff;color:var(--ink);padding:.5rem 1.3rem}
+.go:hover{background:var(--sun)}
+
+/* hero blocks: one orchestrated drop-in on load */
+.blocks{position:relative;gap:1rem}
+.blocks .block{border:4px solid var(--ink);box-shadow:var(--hard);transform:rotate(var(--r,0deg));animation:drop .8s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i,0)*110ms)}
+.blocks .block:nth-child(1){--r:-5deg;--i:5}
+.blocks .block:nth-child(2){--r:3deg;--i:4}
+.blocks .block:nth-child(3){--r:-2deg;--i:3}
+.blocks .block:nth-child(4){--r:4deg;--i:2}
+.blocks .block:nth-child(5){--r:-4deg;--i:1}
+.blocks .block:nth-child(6){--r:2deg;--i:0}
+.blocks .block:nth-child(2),.blocks .block:nth-child(5){translate:0 -14px}
+.blocks .block:hover{transform:rotate(0) translateY(-6px)}
+.blocks .block.pop{animation:pop .4s}
+@keyframes drop{from{transform:translateY(-140px) rotate(calc(var(--r)*4));opacity:0}to{transform:rotate(var(--r));opacity:1}}
+.sticker{position:absolute;inset-block-end:-1.6rem;inset-inline-start:-1.2rem;width:5.6rem;height:5.6rem;display:grid;place-items:center;text-align:center;font-family:var(--head);font-weight:700;line-height:1.1;background:var(--sun);border:3px solid var(--ink);border-radius:50%;box-shadow:3px 3px 0 var(--ink);transform:rotate(-12deg);pointer-events:none}
+.hint{margin-top:2.6rem}
+
+/* sections */
+h2{font-size:clamp(2.1rem,5vw,3.2rem)}
+.lead{font-size:1.2rem}
+.word{box-shadow:var(--hard);border-radius:24px}
+.word:nth-child(4n+1){background:var(--coral-t)}
+.word:nth-child(4n+2){background:var(--sun-t)}
+.word:nth-child(4n+3){background:var(--grass-t)}
+.word:nth-child(4n+4){background:var(--blue-t)}
+#words .word:nth-child(odd){transform:rotate(-1.5deg)}
+#words .word:nth-child(even){transform:rotate(1.5deg)}
+.word:hover{background:#fff;transform:rotate(0) translateY(-4px)}
+.word.pop{animation:pop .4s}
+
+/* topics: asymmetric colored bento, not identical cards */
+.topics{background:var(--paper) radial-gradient(rgba(31,42,90,.09) 1.5px,transparent 1.5px) 0 0/22px 22px;border-block:4px solid var(--ink)}
+.topics .grid{grid-template-columns:repeat(6,1fr);gap:1.4rem}
+.topic{border:3px solid var(--ink);box-shadow:var(--hard);border-radius:28px;grid-column:span 2}
+.topic:nth-child(1){grid-column:span 4;background:var(--coral-t);border-radius:48px 28px 28px 28px}
+.topic:nth-child(2){background:var(--sun-t)}
+.topic:nth-child(3){background:var(--grass-t)}
+.topic:nth-child(4){grid-column:span 4;background:var(--blue-t);border-radius:28px 28px 28px 48px}
+.topic:nth-child(1) h3,.topic:nth-child(4) h3{font-size:2rem}
+.topic .ico{font-size:3.2rem}
+
+/* class steps + facts */
+.steps li{border-top:5px solid var(--ink)}
+.steps li::before{border:3px solid var(--ink);background:var(--sun);color:var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.fact{box-shadow:var(--hard);background:#fff}
+.fact:nth-child(odd){transform:rotate(-1deg)}
+.fact:nth-child(even){transform:rotate(1deg)}
+.fact b{font-size:2.6rem}
+
+/* signup + dialog */
+.signup{background:var(--sun) radial-gradient(rgba(31,42,90,.12) 1.5px,transparent 1.5px) 0 0/22px 22px}
+.signup .box{border:4px solid var(--ink);box-shadow:8px 8px 0 var(--ink)}
+dialog{border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+dialog .close{box-shadow:2px 2px 0 var(--ink)}
+footer{border-top:4px solid var(--sun)}
+
+@media(max-width:760px){
+  .topics .grid{grid-template-columns:1fr}
+  .topic,.topic:nth-child(1),.topic:nth-child(4){grid-column:auto}
+  .sticker{inset-inline-start:auto;inset-inline-end:-.4rem}
+}
+
+/* levels */
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:end}
+.lvl{border:3px solid var(--ink);box-shadow:var(--hard);border-radius:28px;padding:1.5rem}
+.lvl .ico{font-size:3rem;display:block}
+.lvl h3{font-size:1.4rem;margin:.3rem 0}
+.l1{background:var(--grass-t);padding-block:1.5rem}
+.l2{background:var(--sun-t);padding-block:2.4rem}
+.l3{background:var(--coral-t);padding-block:3.3rem}
+.note{margin-top:1.8rem;font-weight:800}
+/* participants */
+.kidsTitle{margin-top:1.4rem;font-size:1.3rem}
+.kid{border:3px solid var(--ink);border-radius:22px;padding:.9rem 1rem 1.1rem;margin-top:.8rem;background:var(--paper);position:relative}
+.kid .row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.kid .full{grid-column:1/-1}
+.kid label{margin:.5rem 0 .25rem;font-size:1rem}
+.kid .rm{position:absolute;top:.6rem;inset-inline-start:.6rem;border:0;background:none;color:var(--ink);font-weight:800;font-size:.95rem;cursor:pointer;text-decoration:underline}
+.kid b{font-family:var(--head)}
+.add{margin-top:1rem;font:inherit;font-weight:800;background:#fff;color:var(--ink);border:3px dashed var(--ink);border-radius:16px;padding:.7rem 1.2rem;cursor:pointer;width:100%}
+.add:hover{background:var(--sun-t)}
+.add[disabled]{opacity:.5;cursor:default}
+@media(max-width:760px){.levels{grid-template-columns:1fr}.lvl,.l2,.l3{padding-block:1.5rem}.kid .row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="ניווט ראשי">
+      <a class="logo" href="#top">🐦 דרור קטן</a>
+      <ul>
+        <li><a href="#words">בואו נתנסה</a></li>
+        <li><a href="#learn">מה לומדים</a></li>
+        <li><a href="#day">איך נראה שיעור</a></li>
+        <li><a href="#levels">רמות</a></li>
+        <li><a href="#join">הרשמה</a></li>
+      </ul>
+    </nav>
+    <div class="hero" id="top">
+      <div>
+        <h1>אנגלית מתחילה במשחק.</h1>
+        <p>שירים, סיפורים ומשחקים שעוזרים לילדים בגילאי 5–6 לומר את המילים הראשונות שלהם באנגלית, עם חיוך.</p>
+        <a class="btn alt" href="#join">שיעור ניסיון חינם</a>
+      </div>
+      <div>
+        <div class="blocks" role="group" aria-label="לחצו על אות כדי לשמוע אותה">
+          <button class="block" data-say="A" aria-label="האות A">A</button>
+          <button class="block" data-say="B" aria-label="האות B">B</button>
+          <button class="block" data-say="C" aria-label="האות C">C</button>
+          <button class="block" data-say="D" aria-label="האות D">D</button>
+          <button class="block" data-say="E" aria-label="האות E">E</button>
+          <button class="block" data-say="F" aria-label="האות F">F</button>
+          <div class="sticker" aria-hidden="true">גילאי<br>5–6</div>
+        </div>
+        <p class="hint">לחצו על קובייה והקשיבו!</p>
+      </div>
+    </div>
+  </div>
+</header>
+<svg class="wave" viewBox="0 0 1200 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C150 50 300 50 450 25 S750 -10 900 25 S1100 50 1200 20 V50 H0Z"/></svg>
+
+<section id="words">
+  <div class="wrap">
+    <h2>אומרים ביחד</h2>
+    <p class="lead">אלו כמה מהמילים הראשונות שילדים לומדים. לחצו על הכרטיס, והילד או הילדה יוכלו להקשיב ולחזור אחריו.</p>
+    <div class="words">
+      <button class="word" data-say="cat"><span>🐱</span><bdi class="en">cat</bdi><small>חתול</small></button>
+      <button class="word" data-say="apple"><span>🍎</span><bdi class="en">apple</bdi><small>תפוח</small></button>
+      <button class="word" data-say="sun"><span>☀️</span><bdi class="en">sun</bdi><small>שמש</small></button>
+      <button class="word" data-say="ball"><span>⚽</span><bdi class="en">ball</bdi><small>כדור</small></button>
+      <button class="word" data-say="fish"><span>🐟</span><bdi class="en">fish</bdi><small>דג</small></button>
+      <button class="word" data-say="red"><span>🔴</span><bdi class="en">red</bdi><small>אדום</small></button>
+    </div>
+  </div>
+</section>
+
+<section class="topics" id="learn">
+  <div class="wrap">
+    <h2>מה הילדים לומדים</h2>
+    <p class="lead">כל שיעור קצר, פעיל ומלא בחזרות, כי כך ילדים בני חמש לומדים הכי טוב.</p>
+    <div class="grid">
+      <article class="topic"><span class="ico" aria-hidden="true">🔤</span><h3>אותיות וצלילים</h3><p>הילדים מחברים כל אות לצליל שלה דרך חרוזים, כתיבה באצבע וחיפוש אוצרות.</p><button class="go" data-topic="letters">כניסה לשיעור</button></article>
+      <article class="topic"><span class="ico" aria-hidden="true">🎨</span><h3>צבעים ומספרים</h3><p>סופרים עד 20 ומכירים צבעים תוך כדי מיון, בנייה וציור.</p><button class="go" data-topic="colors">כניסה לשיעור</button></article>
+      <article class="topic"><span class="ico" aria-hidden="true">🐘</span><h3>חיות ואוכל</h3><p>מילים מהיום-יום עם בובות, כרטיסי תמונות ופיקניק דמיוני.</p><button class="go" data-topic="animals">כניסה לשיעור</button></article>
+      <article class="topic"><span class="ico" aria-hidden="true">👋</span><h3>שיחות ראשונות</h3><p><bdi class="en">Hello, please, thank you</bdi> ו-<bdi class="en">My name is…</bdi> בתרגול במשחקי תפקידים.</p><button class="go" data-topic="talk">כניסה לשיעור</button></article>
+    </div>
+  </div>
+</section>
+
+<section id="day">
+  <div class="wrap">
+    <h2>שיעור במבט אחד</h2>
+    <p class="lead">כל שיעור נמשך 45 דקות ובנוי באותו מקצב רגוע, כך שהילדים תמיד יודעים מה בא אחר כך.</p>
+    <ol class="steps">
+      <li><strong>שיר שלום</strong><small>5 דקות · מקבלים את החברים</small></li>
+      <li><strong>משחקי מילים</strong><small>10 דקות · מילים חדשות עם כרטיסים</small></li>
+      <li><strong>שעת סיפור</strong><small>10 דקות · ספר תמונות</small></li>
+      <li><strong>זזים ומשחקים</strong><small>15 דקות · משחקים ויצירה</small></li>
+      <li><strong>שיר פרידה</strong><small>5 דקות · מנופפים ויוצאים</small></li>
+    </ol>
+    <div class="facts">
+      <div class="fact"><b>5–6</b>גילאים</div>
+      <div class="fact"><b>8</b>ילדים בקבוצה, לכל היותר</div>
+      <div class="fact"><b>פעמיים</b>בשבוע, 45 דקות</div>
+      <div class="fact"><b>100%</b>מורים דוברי אנגלית</div>
+    </div>
+  </div>
+</section>
+
+<section id="levels">
+  <div class="wrap">
+    <h2>שלוש רמות, כל ילד בקצב שלו</h2>
+    <p class="lead">הקבוצות מחולקות לפי רמה, כך שכל ילד לומד בקבוצה שמתאימה לו. אפשר לרשום כמה ילדים יחד, ולכל אחד לבחור רמה משלו.</p>
+    <div class="levels">
+      <article class="lvl l1"><span class="ico" aria-hidden="true">🌱</span><h3>רמה 1 · מתחילים</h3><p>מכירים אותיות, צבעים ומילים בודדות. מתאים לילדים שזו להם הפעם הראשונה באנגלית.</p></article>
+      <article class="lvl l2"><span class="ico" aria-hidden="true">🌿</span><h3>רמה 2 · ממשיכים</h3><p>מחברים מילים למשפטים קצרים כמו <bdi class="en">I see a cat</bdi> ושרים שירים שלמים.</p></article>
+      <article class="lvl l3"><span class="ico" aria-hidden="true">🌳</span><h3>רמה 3 · מתקדמים</h3><p>משוחחים, שואלים ועונים ומספרים סיפור קצר באנגלית.</p></article>
+    </div>
+    <p class="note">לא בטוחים באיזו רמה לבחור? בחרו "נקבע בשיעור הניסיון" ונתאים את הרמה בשיעור.</p>
+  </div>
+</section>
+
+<section class="signup" id="join">
+  <div class="wrap">
+    <div class="box">
+      <h2>שיעור ניסיון חינם</h2>
+      <p>ספרו לנו קצת על הילד או הילדה, ונחזור אליכם עם מועדים פנויים.</p>
+      <form id="form">
+        <label for="parent">שם ההורה</label>
+        <input id="parent" required autocomplete="name">
+        <label for="email">אימייל</label>
+        <input id="email" type="email" required autocomplete="email">
+        <h3 class="kidsTitle">הילדים</h3>
+        <div id="kids"></div>
+        <button type="button" class="add" id="addKid">+ הוספת ילד/ה נוסף/ת</button>
+        <button class="btn" type="submit">קבעו לי שיעור ניסיון</button>
+      </form>
+      <p id="thanks" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">🐦 דרור קטן · <bdi class="en">hello@littlesparrow.example</bdi></div>
+</footer>
+
+<dialog id="lesson" aria-labelledby="lessonTitle">
+  <button class="close" aria-label="סגירה">✕</button>
+  <h2 id="lessonTitle"></h2>
+  <p id="lessonSub"></p>
+  <div class="words" id="lessonWords"></div>
+</dialog>
+
+<script>
+  // Speak English letters and words aloud with a small bounce
+  function say(text){
+    if(!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.8; u.pitch = 1.2;
+    speechSynthesis.speak(u);
+  }
+  document.querySelectorAll('[data-say]').forEach(function(b){
+    b.addEventListener('click', function(){
+      say(b.dataset.say);
+      b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+    });
+  });
+  document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('parent').value.trim();
+    this.style.display = 'none';
+    var t = document.getElementById('thanks');
+    var c=kids.children.length;
+    t.textContent = 'תודה, ' + name + '! קיבלנו הרשמה ל-' + c + (c==1?' ילד/ה':' ילדים') + '. ניצור איתכם קשר בקרוב. 🎉';
+    t.style.display = 'block';
+  });
+
+  var LESSONS={
+    letters:{t:'אותיות וצלילים',s:'לחצו על כרטיס כדי לשמוע את האות ואת המילה.',w:[
+      ['A','🍎','apple','תפוח'],['B','⚽','ball','כדור'],['C','🐱','cat','חתול'],['D','🐶','dog','כלב'],['E','🥚','egg','ביצה'],['F','🐟','fish','דג']],say:function(w){return w[0]+', '+w[2]}},
+    colors:{t:'צבעים ומספרים',s:'לחצו ושמעו איך אומרים באנגלית.',w:[
+      ['🔴','','red','אדום'],['🔵','','blue','כחול'],['🟡','','yellow','צהוב'],['🟢','','green','ירוק'],['1️⃣','','one','אחד'],['2️⃣','','two','שניים'],['3️⃣','','three','שלוש'],['4️⃣','','four','ארבע']]},
+    animals:{t:'חיות ואוכל',s:'לחצו על כרטיס, הקשיבו וחזרו אחרי המילה.',w:[
+      ['🐱','','cat','חתול'],['🐶','','dog','כלב'],['🐦','','bird','ציפור'],['🐘','','elephant','פיל'],['🦁','','lion','אריה'],['🍎','','apple','תפוח'],['🍌','','banana','בננה'],['🍞','','bread','לחם'],['🥛','','milk','חלב']]},
+    talk:{t:'שיחות ראשונות',s:'משפטים קצרים לשימוש בכל יום.',w:[
+      ['👋','','Hello','שלום'],['🙏','','Please','בבקשה'],['😊','','Thank you','תודה'],['🏷️','','My name is…','קוראים לי…'],['👍','','Yes','כן'],['👎','','No','לא'],['👋','','Goodbye','להתראות']]}
+  };
+  var dlg=document.getElementById('lesson');
+  document.querySelectorAll('.go').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var L=LESSONS[btn.dataset.topic];
+      document.getElementById('lessonTitle').textContent=L.t;
+      document.getElementById('lessonSub').textContent=L.s;
+      var box=document.getElementById('lessonWords'); box.innerHTML='';
+      L.w.forEach(function(w){
+        var b=document.createElement('button'); b.className='word';
+        var top=w[1]||w[0];
+        b.innerHTML='<span>'+top+'</span>'+(w[1]?'<bdi class="en big">'+w[0]+'</bdi>':'')+'<bdi class="en">'+w[2]+'</bdi><small>'+w[3]+'</small>';
+        if(!w[1]) b.firstChild.style.fontSize='3rem';
+        b.addEventListener('click',function(){
+          say(L.say?L.say(w):w[2]);
+          b.classList.remove('pop'); void b.offsetWidth; b.classList.add('pop');
+        });
+        box.appendChild(b);
+      });
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('.close').addEventListener('click',function(){dlg.close();speechSynthesis&&speechSynthesis.cancel();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+
+  // Multiple participants, each with an age and a level
+  var kids=document.getElementById('kids'), addBtn=document.getElementById('addKid'), MAX=5;
+  function addKid(){
+    var n=kids.children.length+1, k=document.createElement('div'); k.className='kid';
+    k.innerHTML='<b>ילד/ה '+n+'</b>'
+      +(n>1?'<button type="button" class="rm">הסרה</button>':'')
+      +'<div class="row"><div class="full"><label>שם הילד/ה</label><input class="kn" required></div>'
+      +'<div><label>גיל</label><select class="ka"><option>5</option><option>6</option></select></div>'
+      +'<div><label>רמה</label><select class="kl"><option>רמה 1 · מתחילים</option><option>רמה 2 · ממשיכים</option><option>רמה 3 · מתקדמים</option><option>נקבע בשיעור הניסיון</option></select></div></div>';
+    var rm=k.querySelector('.rm');
+    if(rm) rm.addEventListener('click',function(){k.remove();renumber();});
+    kids.appendChild(k); renumber();
+  }
+  function renumber(){
+    Array.prototype.forEach.call(kids.children,function(k,i){k.querySelector('b').textContent='ילד/ה '+(i+1);});
+    addBtn.disabled=kids.children.length>=MAX;
+  }
+  addBtn.addEventListener('click',addKid);
+  addKid();
+</script>
+</body>
+</html>
